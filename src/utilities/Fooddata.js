@@ -1,5 +1,5 @@
 //extracter by cntrol +f then from tester.html
-export const imageGridCards = [ {
+export const Fooddata = [ {
                                                 "id": "2568358",
                                                 "imageId": "PC_Mweb/North%20Indian.png",
                                                 "action": {
