@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import RestCard from "../components/RestCard";
 
+import Shimmer from "./Shimmer";
 export default function Restaurant(){
    
     const [RestData, setRestData] = useState([])
@@ -24,7 +25,7 @@ export default function Restaurant(){
     },[])
 
 if(RestData.length==0){
-    return(<div>wait manish data is loading shimmer effect</div>)
+    return(<Shimmer/>)
 }
 
 console.log(RestData);
