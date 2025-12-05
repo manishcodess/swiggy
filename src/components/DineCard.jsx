@@ -1,10 +1,7 @@
-
-export default function DineCard({RestData}){
-
-
-    return (
-        <div className="max-w-sm flex-none">
-       <a target="_blank" href={RestData.cta.link}>
+export default function DineCard({ RestData }) {
+  return (
+    <div className="max-w-sm flex-none">
+      <a target="_blank" href={RestData.cta.link}>
         <div className="relative">
           <img
             className="w-80 h-50 object-cover"
@@ -24,9 +21,7 @@ export default function DineCard({RestData}){
             {RestData?.info?.rating?.value}
           </p>
         </div>
-        </a>
-      </div>
-      
-    )
-
+      </a>
+    </div>
+  );
 }
