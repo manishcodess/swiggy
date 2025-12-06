@@ -9,3 +9,4 @@ export default function Foodoption({link}){
     )
 
 }
+//image k andar hi naam likha h khane ka
