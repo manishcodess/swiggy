@@ -2,12 +2,9 @@
   "name": "swiggy",
   "version": "1.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "parcel src/index.html --host 0.0.0.0 --port 1234",
+    "build": "parcel build src/index.html"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.17",
     "parcel": "^2.16.1",
