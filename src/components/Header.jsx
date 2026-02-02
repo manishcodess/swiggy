@@ -1,6 +1,8 @@
 
 import { Link } from "react-router";
 
+{/* <a> (anchor tag) → for external websites
+👉 <Link> → for internal navigation inside a React app */}
 export default function Header() {
   return (
     <>

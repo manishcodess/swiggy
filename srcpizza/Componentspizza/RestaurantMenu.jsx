@@ -15,7 +15,7 @@ export default function RestaurantMenu() {
   useEffect(() => {
     // using local JSON instead of fetch
     const allCards =
-      Pizzadata?.data?.cards?.[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards ||
+      Pizzadata?.data?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards ||
       [];
 
     // keep only sections which have a "title" inside card.card

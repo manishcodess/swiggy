@@ -22,7 +22,7 @@ export default function Restaurant(){
      }
 
      fetchData();
-    },[])
+    },[]) // ek bar render hoga vo bhi starting me
 
 if(RestData.length==0){
     return(<Shimmer/>)
