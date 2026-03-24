@@ -1,6 +1,17 @@
 # Swiggy Clone UI (React + Parcel)
 
+![React](https://img.shields.io/badge/React-19-149ECA?style=for-the-badge&logo=react&logoColor=white)
+![Parcel](https://img.shields.io/badge/Parcel-2-DAA520?style=for-the-badge&logo=parcel&logoColor=black)
+![React Router](https://img.shields.io/badge/React%20Router-7-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Learning%20Project-2563EB?style=for-the-badge)
+
 A frontend learning project that recreates key Swiggy-style flows: home discovery, restaurant listing, and menu browsing.
+
+## Live Preview
+
+- Live demo: add your deployed link here
+- Local URL: `http://localhost:1234`
 
 ## Highlights
 
@@ -70,6 +81,39 @@ swiggy/
 		Utilitiespizza/
 ```
 
+## Screenshots
+
+Add your images after you run the app and capture a few sections.
+
+```text
+assets/
+	home.png
+	restaurants.png
+	menu.png
+```
+
+Then use them in this README:
+
+```md
+![Home](assets/home.png)
+![Restaurants](assets/restaurants.png)
+![Menu](assets/menu.png)
+```
+
+## Demo GIF
+
+Record a short 10-20 second flow (home -> restaurant list -> menu) and place it in:
+
+```text
+assets/demo.gif
+```
+
+Then embed:
+
+```md
+![App Demo](assets/demo.gif)
+```
+
 ## Where Data Comes From
 
 The current UI is powered by local mock data files:
@@ -114,3 +158,15 @@ This project is ideal for practicing:
 - Add search and filter controls on restaurant listing
 - Add loading and error states across routes
 - Add a not-found route and route-level boundaries
+
+## Author
+
+- Name: Manish
+- Role: Frontend Learner
+- Project: Swiggy Clone UI
+
+## Connect
+
+- GitHub: add your GitHub profile link
+- LinkedIn: add your LinkedIn profile link
+- Portfolio: add your portfolio link
