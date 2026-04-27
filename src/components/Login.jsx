@@ -1,10 +1,15 @@
-import { Link, useNavigate } from "react-router";
+import { Link, Navigate, useLocation, useNavigate } from "react-router";
 import { useState } from "react";
+import { useAuth } from "../context/AuthContext";
 
 export default function Login() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const { login, isAuthenticated } = useAuth();
   const [form, setForm] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
+
+  const redirectPath = location.state?.from?.pathname || "/";
 
   const onChange = (e) => {
     const { name, value } = e.target;
@@ -25,15 +30,16 @@ export default function Login() {
       return;
     }
 
-    localStorage.setItem(
-      "swiggyCurrentUser",
-      JSON.stringify({ name: match.name, email: match.email }),
-    );
-    navigate("/");
+    login({ name: match.name, email: match.email });
+    navigate(redirectPath, { replace: true });
   };
 
+  if (isAuthenticated) {
+    return <Navigate to="/" replace />;
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-orange-100 via-white to-orange-50 flex items-center justify-center px-4 py-10">
+    <div className="min-h-screen bg-linear-to-b from-orange-100 via-white to-orange-50 flex items-center justify-center px-4 py-10">
       <div className="w-full max-w-md bg-white rounded-3xl shadow-xl p-7 border border-orange-100">
         <h1 className="text-3xl font-bold text-orange-600">Welcome Back</h1>
         <p className="text-gray-500 mt-1 mb-6">Log in to continue ordering.</p>

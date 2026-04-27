@@ -1,8 +1,10 @@
-import { Link, useNavigate } from "react-router";
+import { Link, Navigate, useNavigate } from "react-router";
 import { useState } from "react";
+import { useAuth } from "../context/AuthContext";
 
 export default function Signup() {
   const navigate = useNavigate();
+  const { login, isAuthenticated } = useAuth();
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -40,16 +42,16 @@ export default function Signup() {
     };
 
     localStorage.setItem("swiggyUsers", JSON.stringify([...users, newUser]));
-    localStorage.setItem(
-      "swiggyCurrentUser",
-      JSON.stringify({ name: newUser.name, email: newUser.email }),
-    );
-
-    navigate("/");
+    login({ name: newUser.name, email: newUser.email });
+    navigate("/", { replace: true });
   };
 
+  if (isAuthenticated) {
+    return <Navigate to="/" replace />;
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-orange-100 via-white to-orange-50 flex items-center justify-center px-4 py-10">
+    <div className="min-h-screen bg-linear-to-b from-orange-100 via-white to-orange-50 flex items-center justify-center px-4 py-10">
       <div className="w-full max-w-md bg-white rounded-3xl shadow-xl p-7 border border-orange-100">
         <h1 className="text-3xl font-bold text-orange-600">Create Account</h1>
         <p className="text-gray-500 mt-1 mb-6">

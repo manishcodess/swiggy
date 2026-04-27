@@ -1,10 +1,13 @@
 import { Link } from "react-router";
+import { useAuth } from "../context/AuthContext";
 
 {
   /* <a> (anchor tag) → for external websites
 👉 <Link> → for internal navigation inside a React app */
 }
 export default function Header() {
+  const { currentUser, isAuthenticated, logout } = useAuth();
+
   return (
     <>
       <div className="bg-[#ff5709] flex justify-around py-7">
@@ -38,10 +41,32 @@ export default function Header() {
             {" "}
             Get the app
           </a>
-          <Link className="bg-black rounded-2xl p-2" to="/login">
-            {" "}
-            Sign in
-          </Link>
+          {isAuthenticated ? (
+            <>
+              <span className="bg-black rounded-2xl p-2">
+                Hi, {currentUser?.name}
+              </span>
+              <button
+                className="border border-black rounded-2xl p-2 text-black bg-white"
+                onClick={logout}
+                type="button"
+              >
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <Link className="bg-black rounded-2xl p-2" to="/login">
+                Sign in
+              </Link>
+              <Link
+                className="border border-white rounded-2xl p-2"
+                to="/signup"
+              >
+                Sign up
+              </Link>
+            </>
+          )}
         </div>
       </div>
 
