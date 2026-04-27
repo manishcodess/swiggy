@@ -16,7 +16,7 @@ export default function RestaurantMenu() {
     // using local JSON instead of fetch
     const allCards =
       Pizzadata?.data?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards ||
-      [];
+      []; // top picks ,recommend section
 
     // keep only sections which have a "title" inside card.card
     const filterData = allCards.filter((item) => "title" in (item?.card?.card || {}));
