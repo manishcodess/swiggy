@@ -1,10 +1,9 @@
 //pizza hut menu(we come here first parent)
 
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import MenuCard from "./MenuCard";
 import { Pizzadata } from "../Utilitiespizza/Pizzadata";
-
 
 export default function RestaurantMenu() {
   const { id } = useParams(); // route: /city/delhi/:id
@@ -19,7 +18,9 @@ export default function RestaurantMenu() {
       []; // top picks ,recommend section
 
     // keep only sections which have a "title" inside card.card
-    const filterData = allCards.filter((item) => "title" in (item?.card?.card || {}));
+    const filterData = allCards.filter(
+      (item) => "title" in (item?.card?.card || {}),
+    );
 
     setRestData(filterData);
   }, []);
