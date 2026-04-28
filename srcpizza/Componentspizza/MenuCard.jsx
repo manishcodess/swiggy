@@ -3,17 +3,20 @@
 import { useState } from "react";
 import RestInfo from "./RestInfo";
 
-export default function MenuCard({ menuItems }) {
+export default function MenuCard({ menuItems, level = 0 }) {
   const [isOpen, setIsOpen] = useState(true);
+  const isNested = level > 0;
 
   // Case 1: this section has nested categories
   if ("categories" in menuItems) {
     return (
-      <div className="w-full">
-        <p className="text-2xl font-bold">{menuItems.title}</p>
-        <div>
+      <div className="w-full mb-2">
+        <p className={`${isNested ? "text-xl" : "text-2xl"} font-bold mb-3`}>
+          {menuItems.title}
+        </p>
+        <div className="pl-2 md:pl-4 border-l border-gray-100">
           {menuItems?.categories?.map((cat) => (
-            <MenuCard key={cat?.title} menuItems={cat} />
+            <MenuCard key={cat?.title} menuItems={cat} level={level + 1} />
           ))}
         </div>
       </div>
@@ -25,15 +28,17 @@ export default function MenuCard({ menuItems }) {
     return (
       <div className="w-full">
         <div className="flex justify-between w-full">
-          <p className="text-3xl font-bold mb-4">{menuItems.title}</p>
+          <p className={`${isNested ? "text-xl" : "text-2xl"} font-bold mb-3`}>
+            {menuItems.title}
+          </p>
           <button
-            className="text-5xl font-bold mr-20"
+            className="text-2xl font-bold text-gray-700"
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? "^" : "⌄"}
+            +
           </button>
         </div>
-        <div className="h-5 bg-gray-200 mt-2 mb-2"></div>
+        <div className="h-3 bg-gray-100 mt-2 mb-4 rounded"></div>
       </div>
     );
   }
@@ -42,25 +47,31 @@ export default function MenuCard({ menuItems }) {
   return (
     <div className="w-full">
       <div className="flex justify-between w-full">
-        <p className="text-2xl font-bold mb-4">{menuItems.title}</p>
+        <p className={`${isNested ? "text-xl" : "text-2xl"} font-bold mb-4`}>
+          {menuItems.title}
+        </p>
         <button
-          className="text-5xl font-bold mr-20"
+          className="text-2xl font-bold text-gray-700"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? "^" : "˯"}
+          -
         </button>
       </div>
 
       <div>
-        {menuItems?.itemCards?.map((item) => (
-          <RestInfo
-            key={item?.card?.info?.id}
-            restData={item?.card?.info}
-          />
-        ))}
+        {Array.isArray(menuItems?.itemCards) &&
+        menuItems.itemCards.length > 0 ? (
+          menuItems?.itemCards?.map((item) => (
+            <RestInfo key={item?.card?.info?.id} restData={item?.card?.info} />
+          ))
+        ) : (
+          <div className="text-sm text-gray-500 mb-4">
+            No items available in this section.
+          </div>
+        )}
       </div>
 
-      <div className="h-5 bg-gray-200 mt-2 mb-2"></div>
+      <div className="h-3 bg-gray-100 mt-2 mb-4 rounded"></div>
     </div>
   );
 }
