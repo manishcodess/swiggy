@@ -170,3 +170,18 @@ This project is ideal for practicing:
 - GitHub: add your GitHub profile link
 - LinkedIn: add your LinkedIn profile link
 - Portfolio: add your portfolio link
+
+
+
+Start: index.html — confirm app mount and scripts. See index.html
+App entry: app.jsx — app structure, routing, providers. See app.jsx
+Auth/context: AuthContext.jsx — auth flow and global state. See AuthContext.jsx
+Routing guard: ProtectedRoute.jsx — route protection logic. See ProtectedRoute.jsx
+Layout: Header.jsx and Footer.jsx — navigation, global links. See Header.jsx and Footer.jsx
+Home & skeleton: Home.jsx and Shimmer.jsx — main landing and loading UX. See Home.jsx and Shimmer.jsx
+Restaurant flow: Restaurant.jsx, RestCard.jsx, and src/RestCard.jsx in srcmore — list → detail → cards. See Restaurant.jsx and RestCard.jsx
+Feature components: DineCard.jsx, Foodoption(s).jsx, Groceryoption(s).jsx, Download.jsx — UI patterns and props. See DineCard.jsx
+Auth pages: Login.jsx, Signup.jsx — form handling and validation. See Login.jsx and Signup.jsx
+Data & API: swiggyapi/swiggy.json, utilities/Fooddata.js, Dinedata.jsx, Grocerydata.js — sample data shape and usage. See swiggyapi/swiggy.json and Fooddata.js
+Styles: index.css — global styles and variables. See index.css
+Extras: srcmore and srcpizza — additional demos/variants to merge or reuse. See srcmore and srcpizza
