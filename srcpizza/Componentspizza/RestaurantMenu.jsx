@@ -68,7 +68,7 @@ export default function RestaurantMenu() {
 
   if (isLoading) {
     return (
-      <div className="w-[80%] mx-auto mt-20">
+      <div className="mx-auto mt-12 w-[92%] md:mt-20 md:w-[80%]">
         <div className="h-7 w-48 bg-gray-200 rounded animate-pulse mb-3"></div>
         <div className="h-5 w-72 bg-gray-100 rounded animate-pulse mb-8"></div>
         <div className="h-24 w-full bg-gray-100 rounded-xl animate-pulse mb-4"></div>
@@ -80,7 +80,7 @@ export default function RestaurantMenu() {
 
   if (error) {
     return (
-      <div className="w-[80%] mx-auto mt-20 border border-red-200 bg-red-50 rounded-xl p-6">
+      <div className="mx-auto mt-12 w-[92%] rounded-xl border border-red-200 bg-red-50 p-6 md:mt-20 md:w-[80%]">
         <p className="text-red-700 font-semibold text-xl">{error}</p>
         <p className="text-red-600 mt-1">Please refresh and try again.</p>
       </div>
@@ -89,7 +89,7 @@ export default function RestaurantMenu() {
 
   if (restData.length === 0) {
     return (
-      <div className="w-[80%] mx-auto mt-20 border border-gray-200 bg-gray-50 rounded-xl p-6">
+      <div className="mx-auto mt-12 w-[92%] rounded-xl border border-gray-200 bg-gray-50 p-6 md:mt-20 md:w-[80%]">
         <p className="text-xl font-semibold">No menu sections available</p>
         <p className="text-gray-600 mt-1">
           This restaurant currently has no listed items.
@@ -99,9 +99,9 @@ export default function RestaurantMenu() {
   }
 
   return (
-    <div className="w-[80%] mx-auto mt-20">
+    <div className="mx-auto mt-12 w-[92%] md:mt-20 md:w-[80%]">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold">
+        <h1 className="text-2xl font-bold sm:text-3xl">
           {restaurantInfo?.name || "Restaurant"}
         </h1>
         <p className="text-gray-600 mt-1">

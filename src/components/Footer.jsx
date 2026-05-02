@@ -1,17 +1,19 @@
 export default function Footer() {
   return (
-    <div className="bg-gray-900 h-50 w-full text-amber-50 text-4xl">
-    <div className="flex flex-col justify-center items-center h-full">
-        <p className="text-2xl font-bold mb-4">Get The Swiggy App now!</p>
-        <div className="flex gap-4">
-            <button className="bg-amber-500 hover:bg-amber-600 px-6 py-2 rounded text-sm font-semibold text-gray-900">
-                Download for iOS
-            </button>
-            <button className="bg-amber-500 hover:bg-amber-600 px-6 py-2 rounded text-sm font-semibold text-gray-900">
-                Download for Android
-            </button>
+    <div className="w-full bg-gray-900 px-4 py-8 text-amber-50">
+      <div className="flex h-full flex-col items-center justify-center">
+        <p className="mb-4 text-center text-xl font-bold sm:text-2xl">
+          Get The Swiggy App now!
+        </p>
+        <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
+          <button className="rounded bg-amber-500 px-6 py-2 text-sm font-semibold text-gray-900 hover:bg-amber-600">
+            Download for iOS
+          </button>
+          <button className="rounded bg-amber-500 px-6 py-2 text-sm font-semibold text-gray-900 hover:bg-amber-600">
+            Download for Android
+          </button>
         </div>
-    </div>
+      </div>
     </div>
   );
 }

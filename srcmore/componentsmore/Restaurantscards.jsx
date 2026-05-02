@@ -90,19 +90,19 @@ export default function Restaurantscards() {
   ]);
 
   return (
-    <div className="w-[92%] mx-auto mt-8 mb-8">
-      <h1 className="text-3xl font-bold mb-4">Restaurants</h1>
+    <div className="mx-auto mt-8 mb-8 w-[92%] md:w-[90%]">
+      <h1 className="mb-4 text-2xl font-bold sm:text-3xl">Restaurants</h1>
 
       <div className="grid md:grid-cols-2 gap-3 mb-3">
         <input
-          className="border border-gray-300 rounded-lg px-4 py-2 text-lg"
+          className="rounded-lg border border-gray-300 px-4 py-2 text-base sm:text-lg"
           type="text"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           placeholder="Search restaurants or cuisines"
         />
         <input
-          className="border border-gray-300 rounded-lg px-4 py-2 text-lg"
+          className="rounded-lg border border-gray-300 px-4 py-2 text-base sm:text-lg"
           type="text"
           value={dishTerm}
           onChange={(e) => setDishTerm(e.target.value)}
@@ -175,9 +175,11 @@ export default function Restaurantscards() {
           </p>
         </div>
       ) : (
-        <div className="flex flex-wrap gap-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {filteredRestaurants.map((item) => (
-            <RestCard key={item?.info?.id} restprop={item} />
+            <div key={item?.info?.id} className="mx-auto w-full max-w-[280px]">
+              <RestCard restprop={item} />
+            </div>
           ))}
         </div>
       )}
